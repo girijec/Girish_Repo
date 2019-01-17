@@ -3,7 +3,7 @@ Problem: Find the shortest path of a given graph
 
 Technology used: Java 8, Spring Boot, REST API, Angular 6, Durby DB (Embedded), Eclipse, Tomcat 9, Maven 
 
-Problem Resolution:
+#Problem Resolution:
  
 1. I used Dijkstra’s shortest path algorithm to solve the problem. Will not explain the Dijkstra’s algorithim here.
 2. Created two JPA entities, Planet and AdjacentPlanet and used the same objects to carry the data to UI layer
@@ -23,7 +23,7 @@ Problem Resolution:
    ng start for start the server
  
  
-Ran The application in browser:
+#Ran The application in browser:
 
 1. WAR FIle: Please download the file from https://github.com/girijec/Girish_Repo
 2. Past the spp.war file into webapps directory inside installed Tomcat 9
@@ -35,17 +35,16 @@ Ran The application in browser:
 
 
 
-Ran application in any REST client (Postman recommended):
+#Ran application in any REST client (Postman recommended):
 
-Please let me know if you have any query.
- 1.Get a planet with all details, like 
-      a) total distance from Earth 
+Get a planet with below details 
+         a) total distance from Earth 
 	  b) total traffic from earth. 
 	  c) Time taken to given Planet from Earth with traffic and without trafic
 	  d) Adjacent planet info
 	  c) Shortest Path from Earth
 	  
-	 URI1: http://localhost:8080/spp/api/planet/node/<planet_node>, Here planet_node is the path variable
+	 URI 1: http://localhost:8080/spp/api/planet/node/<planet_node>, Here planet_node is the path variable
 	 Example URL : http://localhost:8080/spp/api/planet/node/F
 	  
 	 URI 2: http://localhost:8080/api/planet/graph , this end point will give the settled graph with all the planet details
