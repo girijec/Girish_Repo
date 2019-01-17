@@ -1,0 +1,126 @@
+<div class="container-fluid login-page">
+    <div class="row full-width" style="height:100PX;">
+        <div class="col-md-12">
+
+        </div>
+
+    </div>
+    <div class="row full-width">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+
+            <div class="row text-center">
+                <h3 class="font-weight-bold"> Assignment: Find the shorted path from planet Earth(A)</h3>
+                <br />
+                <br />
+            </div>
+            <div class="row text-left">
+                <mat-form-field class="full-width">
+                    <mat-select placeholder="To Planet" [(ngModel)]="selectedPlanetId" (change)="onSelect()">
+                        <mat-option *ngFor="let planet of planets; let i = index" [value]="planet.planetId">
+                            {{ planet.planetNode }} |  {{planet.planetName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="row full-width" *ngIf="planet.planetName">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="text-primary">Planet Node</div>
+                        </div>
+                        <div class="col-md-5">
+                            <div>{{planet.planetNode}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="text-primary">Planet Name</div>
+                        </div>
+                        <div class="col-md-5">
+                            <div>{{planet.planetName}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="text-primary">Planet distance from Earth</div>
+                        </div>
+                        <div class="col-md-5">
+                            <div>{{planet.distance}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="text-primary">Total traffic calculated  to this planet</div>
+                        </div>
+                        <div class="col-md-5">
+                            <div>{{planet.totalTraffic}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="text-primary">Planet distance from Earth with traffic</div>
+                        </div>
+                        <div class="col-md-5">
+                            <div>({{planet.distance}} - {{planet.totalTraffic}}) = {{planet.distanceWithTraffic}}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="text-primary">Time taken to reached the planet (Without traffic,In years)</div>
+                        </div>
+                        <div class="col-md-5">
+                            <div>{{planet.timeTakenWithOutTraffic}}</div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-md-7">
+                            <div class="text-primary">Time taken to reached the planet (With traffic,In years)</div>
+                        </div>
+                        <div class="col-md-5">
+                            <div>{{planet.timeTakenWithTraffic}}</div>
+                        </div>
+                    </div>
+                    
+
+
+                </div>
+            </div>
+            <div class="row" *ngIf="planet.planetName">
+                <br />
+                <br />
+            </div>
+            <div class="row" *ngIf="planet.planetName">
+                <br /><br /><br />
+                <div class="font-weight-bold">Below is the shortest path to planet {{planet.planetName}}({{ planet.planetNode }})</div>
+                <br />
+                <br />
+            </div>
+            <div class="row" *ngIf="planet.planetName">
+
+                <ng-container *ngFor="let p of planet.shortestPath; let i = index">
+                    <div class="col-md-1 text-primary font-weight-bold">
+                        {{p.planetNode}}  &nbsp;&nbsp;
+                    </div>
+
+                </ng-container>
+                <div class="col-md-1 text-primary font-weight-bold">
+                    {{planet.planetNode}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+
+    </div>
+    <div class="footer bg-primary text-white">
+        <div class="pull-right text-white" style="padding-right:50px;padding-bottom:2px; padding-top:2px;">
+            Assignment: Shortest Path Algorithm - by Girish, Email: girijec@gmail.com
+        </div>
+    </div>
+
+</div>
