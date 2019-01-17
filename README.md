@@ -1,4 +1,4 @@
-# Girish_Repo
+# Shortest Path Problem using Dijkstra’s algorithim
 Problem: Find the shortest path of a given graph
 
 Technology used: Java 8, Spring Boot, REST API, Angular 6, Durby DB (Embedded), Eclipse, Tomcat 9, Maven 
