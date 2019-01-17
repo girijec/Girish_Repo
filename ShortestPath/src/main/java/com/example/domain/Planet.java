@@ -42,10 +42,10 @@ public class Planet {
 											// distanceWithTraffic = distance - totalTraffic
 	
 	@Transient
-	private String timeWithTraffic;
+	private String timeTakenWithTraffic;
 	
 	@Transient
-	private String timeWithOutTraffic;
+	private String timeTakenWithOutTraffic;
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "planetOrigin", cascade = CascadeType.ALL)
 	private List<AdjacentPlanet> adjacentPlanets;
@@ -105,21 +105,22 @@ public class Planet {
 		this.distanceWithTraffic = distanceWithTraffic;
 	}
 	
+	
 
-	public String getTimeWithTraffic() {
-		return timeWithTraffic;
+	public String getTimeTakenWithTraffic() {
+		return timeTakenWithTraffic;
 	}
 
-	public void setTimeWithTraffic(String timeWithTraffic) {
-		this.timeWithTraffic = timeWithTraffic;
+	public void setTimeTakenWithTraffic(String timeTakenWithTraffic) {
+		this.timeTakenWithTraffic = timeTakenWithTraffic;
 	}
 
-	public String getTimeWithOutTraffic() {
-		return timeWithOutTraffic;
+	public String getTimeTakenWithOutTraffic() {
+		return timeTakenWithOutTraffic;
 	}
 
-	public void setTimeWithOutTraffic(String timeWithOutTraffic) {
-		this.timeWithOutTraffic = timeWithOutTraffic;
+	public void setTimeTakenWithOutTraffic(String timeTakenWithOutTraffic) {
+		this.timeTakenWithOutTraffic = timeTakenWithOutTraffic;
 	}
 
 	public List<AdjacentPlanet> getAdjacentPlanets() {

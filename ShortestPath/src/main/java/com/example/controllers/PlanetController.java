@@ -48,7 +48,11 @@ public class PlanetController {
 	@GetMapping(value="/node/{node}")
 	public ResponseEntity<Planet> getByNode(@PathVariable String node) {
 		logger.info("Get Planet by node {} ", node);
+		
+		
 		Planet planet = planetService.findByNode(node);
+		planet = algorithm.findSettledPlanet(planet);
+
 		return new ResponseEntity<Planet>(planet, HttpStatus.OK);
 	}
 	

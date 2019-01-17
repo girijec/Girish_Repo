@@ -2,7 +2,6 @@ package com.example.components;
 
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.Map.Entry;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.example.domain.AdjacentPlanet;
 import com.example.domain.Planet;
 import com.example.services.PlanetService;
-import com.example.utils.Utils;
 
 @Service
 public class Algorithm {
@@ -97,8 +95,8 @@ public class Algorithm {
 			evaluationPlanet.setDistance(distance);
 			evaluationPlanet.setTotalTraffic(totalTrafic);
 			evaluationPlanet.setDistanceWithTraffic(distanceWithTraffic);
-			evaluationPlanet.setTimeWithTraffic(sbTimeTaken_WithTraffic.toString());
-			evaluationPlanet.setTimeWithOutTraffic(sbTimeTaken_WithOutTraffic.toString());
+			evaluationPlanet.setTimeTakenWithTraffic(sbTimeTaken_WithTraffic.toString());
+			evaluationPlanet.setTimeTakenWithOutTraffic(sbTimeTaken_WithOutTraffic.toString());
 			
 			LinkedList<Planet> shortestPath = new LinkedList<>(sourcePlanet.getShortestPath());
 			shortestPath.add(sourcePlanet);
@@ -127,5 +125,19 @@ public class Algorithm {
 	public static List<Planet> getSettledPlanets() {
 		return settledPlanets;
 	}
+	
+	public Planet findSettledPlanet(Planet p_Planet) {
+		if(settledPlanets == null || settledPlanets.isEmpty()) {
+			Planet source = planetService.findByNode("A");
+			settledPlanets = calculateShortestPathFromSource(source);		
+		}
+		for(Planet planet :settledPlanets) {
+			if(planet.equals(p_Planet)) {
+				return planet;
+			}
+		}
+		return null;
+	}
+	
 
 }
